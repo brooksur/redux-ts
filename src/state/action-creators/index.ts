@@ -5,6 +5,7 @@ import { Action } from '../actions'
 
 export const searchRepositories = (term: string) => {
   return async (dispatch: Dispatch<Action>) => {
+    console.log(term)
     dispatch({
       type: ActionType.SEARCH_REPOSITORIES
     })
@@ -16,6 +17,8 @@ export const searchRepositories = (term: string) => {
           params: { text: term }
         }
       )
+
+      console.log(data)
 
       dispatch({
         type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
